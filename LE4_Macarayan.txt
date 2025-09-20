@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main()
+{
+    char fullName[30];
+    char section[20];
+    int f_number, s_number;
+    int sum, difference, product, quotient;
+
+    // inputs
+    printf("Enter Complete Name: ");
+    fgets(fullName, sizeof(fullName), stdin);
+
+    printf("Enter Section: ");
+    fgets(section, sizeof(section), stdin);
+
+    printf("Enter first number: ");
+    scanf("%d", &f_number);
+
+    printf("Enter second number: ");
+    scanf("%d", &s_number);
+
+    // calculations
+    sum = f_number + s_number;
+    difference = f_number - s_number;
+    product = f_number * s_number;
+    quotient = f_number / s_number;
+
+    // outputs
+    printf("\nStudent Calculator\n");
+    printf("Student name: %s", fullName);
+    printf("Section: %s", section);
+
+    printf("\nResults:\n");
+    printf("%d + %d = %d\n", f_number, s_number, sum);
+    printf("%d - %d = %d\n", f_number, s_number, difference);
+    printf("%d * %d = %d\n", f_number, s_number, product);
+    printf("%d / %d = %d\n", f_number, s_number, quotient);
+
+    return 0;
+}
