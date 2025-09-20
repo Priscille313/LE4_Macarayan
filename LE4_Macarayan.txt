@@ -2,10 +2,13 @@
 
 int main()
 {
+    //inputs
     char fullName[30];
     char section[20];
-    int f_number, s_number;
-    int sum, difference, product, quotient;
+    int num1;
+    int num2;
+    int num3;
+    int num4;
 
     // inputs
     printf("Enter Complete Name: ");
@@ -14,28 +17,40 @@ int main()
     printf("Enter Section: ");
     fgets(section, sizeof(section), stdin);
 
-    printf("Enter first number: ");
-    scanf("%d", &f_number);
-
-    printf("Enter second number: ");
-    scanf("%d", &s_number);
-
-    // calculations
-    sum = f_number + s_number;
-    difference = f_number - s_number;
-    product = f_number * s_number;
-    quotient = f_number / s_number;
-
-    // outputs
-    printf("\nStudent Calculator\n");
-    printf("Student name: %s", fullName);
+    printf("\nEnter 1st Quarter Grade: ");
+    scanf("%d", &num1);
+    printf("Enter 2nd Quarter Grade: ");
+    scanf("%d", &num2);
+    printf("Enter 3rd Quarter Grade: ");
+    scanf("%d", &num3);
+    printf("Enter 4th Quarter Grade: ");
+    scanf("%d", &num4);
+    
+    //calculations
+    float genA = (num1 + num2 + num3 + num4) / 4;
+    
+    //outputs
+    printf("\nStudent: %s", fullName);
     printf("Section: %s", section);
-
-    printf("\nResults:\n");
-    printf("%d + %d = %d\n", f_number, s_number, sum);
-    printf("%d - %d = %d\n", f_number, s_number, difference);
-    printf("%d * %d = %d\n", f_number, s_number, product);
-    printf("%d / %d = %d\n", f_number, s_number, quotient);
+    printf("General Average: %.2f", genA);
+    printf("\n");
+    
+    //logical
+    if(genA >= 90) {
+        printf("Remarks: Outstanding");
+    }
+    else if(genA >= 85) {
+        printf("Remarks: Very Satisfactory");
+    }
+    else if(genA >= 80) {
+        printf("Remarks: Satisfactory");
+    }
+    else if(genA >= 75) {
+        printf("Remarks: Fair");
+    }
+    else if(genA < 75) {
+        printf("Remarks: Failed");
+    }
 
     return 0;
 }
